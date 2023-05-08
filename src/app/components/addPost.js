@@ -1,13 +1,21 @@
 "use client";
 import React, { useState, useTransition } from "react";
 import { submitPost } from "../DB/mutations/submitPost";
+import { useUser } from "@clerk/nextjs";
 
 export default function AddPost({}) {
 	const [post, setPost] = useState("");
 	const [isPending, startTransition] = useTransition();
 
+	const user = useUser();
+
+	const userObject = {
+		username: user.user?.username,
+		id: user.user?.id,
+	};
+
 	return (
-		<div className='flex flex-col w-2/4 border border-sky-400 rounded p-4'>
+		<div className='flex flex-col w-full border border-sky-400 rounded p-4'>
 			{isPending ? (
 				<p>Posting...</p>
 			) : (
@@ -17,7 +25,7 @@ export default function AddPost({}) {
 						onClick={() =>
 							startTransition(() => {
 								setPost("");
-								submitPost(post);
+								submitPost(post, userObject);
 							})
 						}
 					>

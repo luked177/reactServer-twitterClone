@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@azure/cosmos": "^3.17.3",
+    "@clerk/nextjs": "^4.17.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
@@ -17,6 +18,10 @@
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-use-location-state": "^3.1.2",
     "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
