@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 				<body className={inter.className}>
 					<header className='flex justify-between items-center bg-stone-600 text-white p-4'>
 						<p>react-server-twitter-clone</p>
-						<Search />
+						{/* <Search /> */}
 						<UserButton
 							showName
 							appearance={{
